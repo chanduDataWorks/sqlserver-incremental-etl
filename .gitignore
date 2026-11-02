@@ -1,0 +1,8 @@
+@"
+# Visual Studio / SSIS build output and user settings
+.vs/
+bin/
+obj/
+*.user
+*.suo
+"@ | Set-Content -Encoding ascii .gitignore

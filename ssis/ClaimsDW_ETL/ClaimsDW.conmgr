@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ClaimsDW"
+  DTS:DTSID="{734E7E42-B2F2-45BC-955B-7CD8C0B29F3A}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectByProxy">@[$Project::LocalHostClaimsDW_ConnectByProxy]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::DatabaseName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=ClaimsDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Trust Server Certificate=True;Application Name=SSIS-ClaimsDW_ETL-{734E7E42-B2F2-45BC-955B-7CD8C0B29F3A}LocalHost.ClaimsDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
