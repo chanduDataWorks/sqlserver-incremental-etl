@@ -75,7 +75,13 @@ sqlserver-incremental-etl/
     - **Run 2** (incremental): only the changed rows load. Member versions are created, claims update rather than duplicate.
     - **Run 3:** nothing changed, so 0 rows load
 3. Run `05`. Every check should return 0 rows or `PASS`.
-4. Build the SSIS package with `ssis/SSIS_PACKAGE_GUIDE.md`.
+4. 4. **Run it through SSIS:** open `ssis/ClaimsDW_ETL/ClaimsDW_ETL.sln` in Visual Studio (SSIS extension required), then:
+    - Reset with scripts `01` → `03`
+    - Run the package: full load (5,540 rows)
+    - Run `06_simulate_source_changes.sql` **once**
+    - Run the package again: incremental load picks up only the 400 changed rows (15 members, 85 claim corrections, 300 new claims)
+
+    The *Results* section above shows this run. To rebuild the package from scratch, follow `ssis/SSIS_PACKAGE_GUIDE.md`.
 
 ---
 
